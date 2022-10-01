@@ -1,3 +1,61 @@
 .modal {
     display: none;
+    position: fixed;
+    inset: 0;
+    padding: 40px;
+    overflow-y: auto;
+    cursor: pointer;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+
+    &_person {
+        display: flex;
+
+    }
+
+    &__title {
+        display: block;
+        text-align: center;
+        font-size: 24px;
+        margin-bottom: 24px;
+        font-weight: 400;
+    }
+
+    &__body {
+        position: relative;
+        cursor: default;
+        margin: auto;
+        max-width: 768px;
+        width: 100%;
+        background-color: #F2F5FC;
+        border-radius: 12px;
+        padding: 24px 20px 48px;
+
+        &_pd {
+            padding-bottom: 29px;
+        }
+    }
+
+    &__container {
+        max-width: 632px;
+        margin: 0 auto;
+    }
+
+    &__close {
+        position: absolute;
+        transform: translate(50%, -50%);
+        background-color: #FFFFFF;
+        border-radius: 100%;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #7B7B7B;
+        top: 0;
+        right: 0;
+
+        &:hover {
+            color: #000000;
+        }
+    }
 }

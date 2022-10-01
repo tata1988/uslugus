@@ -1,0 +1,124 @@
+.form {
+
+    &__fieldset {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px 12px;
+
+        &_user,
+        &_service {
+            margin-bottom: 46px;
+        }
+
+        &_password {
+            margin-bottom: 36px;
+        }
+
+        &_review {
+            margin-bottom: 43px;
+        }
+    }
+
+    &__label {
+        flex: 1 1 310px;
+    }
+
+    &__text {
+        font-weight: 300;
+        display: block;
+        margin-bottom: 4px;
+    }
+
+    &__input {
+        background-color: #FFFFFF;
+        border-radius: 8px;
+        height: 46px;
+        padding: 10px 14px;
+        border: none;
+        font-weight: 300;
+        width: 100%;
+        font-weight: 300;
+    }
+
+
+    &__wrapper-btn {
+        min-height: 114px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__select {
+        background-color: #FFFFFF;
+        border-radius: 8px;
+        height: 46px;
+        padding: 10px 14px;
+        border: none;
+        font-weight: 300;
+        width: 100%;
+    }
+
+    &__select_price {
+        width: 105px;
+    }
+
+    &__wrapper-price {
+        display: flex;
+        gap: 5px;
+    }
+
+    &__textarea {
+        resize: none;
+        background-color: #FFFFFF;
+        border-radius: 8px;
+        min-height: 80px;
+        padding: 10px 14px;
+        border: none;
+        font-weight: 300;
+        width: 100%;
+    }
+
+    &__wrapper-rating {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 24px;
+    }
+
+
+    &__password {
+        position: relative;
+
+    }
+
+    &__password-eye {
+        cursor: pointer;
+        display: block;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 50%;
+        right: 14px;
+        transform: translateY(-50%);
+        background-image: url('img/eyeSlash.svg');
+
+        &_show {
+            background-image: url('img/eye.svg');
+        }
+    }
+
+    &__submit {
+
+        display: block;
+        background-color: #FFD600;
+        border-radius: 4px;
+        padding: 10px 20px;
+
+        &_sign-up {
+            align-self: end;
+        }
+
+        &_auth {
+            margin-left: auto;
+        }
+    }
+}

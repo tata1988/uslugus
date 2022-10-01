@@ -5,9 +5,13 @@
     display: grid;
     grid-template-areas:
         'avatar present price'
-        '. . review';
+        'contacts contacts review';
     grid-template-columns: 50px 1fr max-content;
     gap: 20px 24px;
+
+    &_person {
+        gap: 40px 14px;
+    }
 
     &__avatar {
         grid-area: avatar;
@@ -18,6 +22,7 @@
     }
 
     &__title {
+        font-weight: 400;
         font-size: 24px;
         margin-bottom: 10px;
     }
@@ -36,17 +41,49 @@
     &__review {
         grid-area: review;
         display: flex;
-    }
-
-    &__stars {
-        display: flex;
-        align-items: center;
-        gap: 2px;
-        margin-right: 16px;
+        gap: 16px;
+        justify-content: flex-end;
+        align-items: flex-end;
     }
 
     &__count-review {
         padding-left: 18px;
         background: url('img/comment.svg') left/14px no-repeat;
     }
+
+    &__contacts {
+        grid-area: contacts;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        align-self: flex-end;
+
+    }
+
+    &__link {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 24px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        &_phone::before {
+            background-image: url('img/phone.svg');
+
+        }
+
+        &_email::before {
+            background-image: url('img/email.svg');
+        }
+    }
+
 }

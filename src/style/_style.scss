@@ -20,9 +20,15 @@ h2,
 h3,
 h4,
 p,
-ul,
+ul {
+  margin: 0;
+}
+
 fieldset {
   margin: 0;
+  padding: 0;
+  border: none;
+  
 }
 
 ul {
