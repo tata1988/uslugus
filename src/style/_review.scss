@@ -3,6 +3,11 @@
         font-weight: 400;
         font-size: 24px;
         margin-bottom: 16px;
+
+        @include max-width(520px) {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
     }
 
     &__list {
@@ -10,6 +15,11 @@
         flex-direction: column;
         margin-bottom: 16px;
         gap: 10px;
+
+        @include max-width(520px) {
+            gap: 4px;
+            margin-bottom: 8px;
+        }
     }
 
     &__item {
@@ -21,11 +31,17 @@
         grid-template-rows: min-content;
         gap: 8px;
         min-height: 95px;
+
+
     }
 
     &__name {
         font-weight: 400;
         font-size: 16px;
+
+        @include max-width(520px) {
+            font-size: 14px;
+        }
     }
 
     &__stars {
@@ -48,6 +64,12 @@
             height: unset;
         }
 
+        @include max-width(520px) {
+            font-size: 14px;
+            line-height: 16px;
+            height: calc(16px * 2);
+        }
+
     }
 
     &__open {
@@ -67,7 +89,7 @@
         }
 
         &_list {
-        
+
             display: block;
             margin-left: auto;
         }

@@ -9,6 +9,15 @@
     grid-template-columns: 50px 1fr max-content;
     gap: 20px 24px;
 
+    @include max-width(520px) {
+        grid-template-areas:
+            'avatar . price'
+            'present present review'
+            'contacts contacts contacts';
+        padding: 16px;
+        gap: 8px;
+    }
+
     &_person {
         gap: 40px 14px;
     }
@@ -25,10 +34,19 @@
         font-weight: 400;
         font-size: 24px;
         margin-bottom: 10px;
+
+        @include max-width(520px) {
+            font-size: 18px;
+            margin-bottom: 17px;
+        }
     }
 
     &__name {
         font-weight: 300;
+
+        @include max-width(520px) {
+            font-size: 14px;
+        }
 
     }
 
@@ -36,6 +54,12 @@
         grid-area: price;
         font-size: 24px;
         text-align: right;
+
+        @include max-width(520px) {
+            font-size: 18px;
+            padding-top: 8px;
+            padding-right: 8px;
+        }
     }
 
     &__review {
@@ -44,6 +68,11 @@
         gap: 16px;
         justify-content: flex-end;
         align-items: flex-end;
+
+        @include max-width(520px) {
+            font-size: 14px;
+            gap: 8px;
+        }
     }
 
     &__count-review {
@@ -65,6 +94,11 @@
         display: flex;
         align-items: center;
         gap: 9px;
+
+        @include max-width(520px) {
+            font-size: 14px;
+
+        }
 
         &::before {
             content: '';

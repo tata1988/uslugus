@@ -4,22 +4,43 @@
     &__container {
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        gap: 20px 30px;
+
+        @include max-width(768px) {
+            flex-wrap: wrap;
+        }
     }
 
     &__logo {
-        margin-right: 88px;
-        height: 28px;
+        margin-right: 58px;
+
+        @include max-width(1024px) {
+            margin-right: 38px;
+        }
+
+        @include max-width(768px) {
+            margin-right: 0;
+        }
+
     }
 
     &__search {
         margin-right: auto;
+
+        @include max-width(768px) {
+            order: 1;
+        }
     }
 
     &__auth {
-
         display: flex;
         gap: 40px;
         align-items: center;
+
+        @include max-width(1024px) {
+            gap: 30px;
+        }
     }
 
     &__auth-btn {
@@ -36,6 +57,11 @@
 
         &:active {
             color: #e5c207;
+        }
+
+        @include max-width(520px) {
+            font-size: 0;
+            gap: 0;
         }
     }
 }

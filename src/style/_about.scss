@@ -3,11 +3,21 @@
         font-weight: 400;
         font-size: 24px;
         margin-bottom: 16px;
+
+        @include max-width(520px) {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
     }
 
     &__text {
         font-weight: 300;
         font-size: 16px;
         line-height: 140%;
+
+        @include max-width(520px) {
+            font-size: 14px;
+
+        }
     }
 }

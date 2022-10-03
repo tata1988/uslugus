@@ -1,24 +1,61 @@
 .footer {
     padding: 55px 0;
 
-    &__container {
-        display: flex;
-        justify-content: space-between;
+    @include max-width(768px) {
+        padding-bottom: 30px;
     }
 
-    &__wrapper {
-        display: flex;
-        flex-direction: column;
+    @include max-width(520px) {
+        padding-bottom: 14px;
+    }
+
+    &__container {
+        display: grid;
+        gap: 14px;
+        grid-template-areas:
+            'logo .'
+            'copyright contact';
+
+        @include max-width(520px) {
+            grid-template-areas:
+                'logo'
+                'contact'
+                'copyright';
+            gap: 0;
+        }
     }
 
     &__logo {
-        margin-bottom: 42px;
+        grid-area: logo;
+
+        @include max-width(520px) {
+            margin-bottom: 44px;
+        }
+    }
+
+    &__copyright {
+        grid-area: copyright;
+        align-self: end;
+
+        @include max-width(520px) {
+            justify-self: left;
+            font-size: 14px;
+        }
     }
 
     &__contact {
         display: flex;
         flex-direction: column;
-        gap: 7px;
-        justify-content: flex-end;
+        gap: 10px;
+        grid-area: contact;
+        justify-self: end;
+
+
+        @include max-width(520px) {
+            justify-self: start;
+            font-size: 14px;
+            margin-bottom: 33px;
+
+        }
     }
 }

@@ -5,17 +5,30 @@
         flex-wrap: wrap;
         gap: 16px 12px;
 
+        @include max-width(520px) {
+            gap: 8px;
+        }
+
         &_user,
         &_service {
             margin-bottom: 46px;
+
+            @include max-width(520px) {
+                margin-bottom: 32px;
+            }
         }
 
         &_password {
             margin-bottom: 36px;
+
+            @include max-width(520px) {
+                margin-bottom: 32px;
+            }
         }
 
         &_review {
-            margin-bottom: 43px;
+            margin-bottom: 32px;
+
         }
     }
 
@@ -27,6 +40,11 @@
         font-weight: 300;
         display: block;
         margin-bottom: 4px;
+
+        @include max-width(520px) {
+            font-size: 14px;
+
+        }
     }
 
     &__input {
@@ -37,7 +55,11 @@
         border: none;
         font-weight: 300;
         width: 100%;
-        font-weight: 300;
+        color: #C0C0C0;
+
+        @include max-width(520px) {
+            font-size: 14px;
+        }
     }
 
 
@@ -45,6 +67,11 @@
         min-height: 114px;
         display: flex;
         justify-content: space-between;
+
+        @include max-width(520px) {
+            flex-direction: column;
+            gap: 32px;
+        }
     }
 
     &__select {
@@ -55,6 +82,11 @@
         border: none;
         font-weight: 300;
         width: 100%;
+        color: #C0C0C0;
+
+        @include max-width(520px) {
+            font-size: 14px;
+        }
     }
 
     &__select_price {
@@ -81,9 +113,19 @@
         display: flex;
         align-items: center;
         justify-content: flex-end;
-        gap: 24px;
+        gap: 16px 24px;
+
+        @include max-width(520px) {
+            flex-direction: column;
+            align-items: flex-end;
+        }
     }
 
+    &__rating {
+        @include max-width(520px) {
+            order: 1;
+        }
+    }
 
     &__password {
         position: relative;
@@ -112,6 +154,11 @@
         background-color: #FFD600;
         border-radius: 4px;
         padding: 10px 20px;
+
+        @include max-width(520px) {
+            font-size: 14px;
+
+        }
 
         &_sign-up {
             align-self: end;
