@@ -1,0 +1,40 @@
+@import '~choices.js/public/assets/styles/choices.min.css';
+
+.choices {
+    position: relative;
+    z-index: 333;
+
+}
+
+.choices__inner {
+    height: 46px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+
+.choices__list--dropdown {
+    border: none;
+}
+
+.choices__list--dropdown .choices__item--selectable {
+    padding-right: 0 !important;
+}
+
+.choices[data-type*=select-one]::after {
+    width: 20px;
+    height: 20px;
+    background-image: url('img/down.svg');
+    background-repeat: no-repeat;
+    margin-top: -5px;
+    border: none;
+
+}
+
+.choices[data-type*=select-one].is-open::after {
+    background-image: url('img/up.svg');
+    background-repeat: no-repeat;
+}

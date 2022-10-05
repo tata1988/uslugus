@@ -6,6 +6,7 @@
     overflow-y: auto;
     cursor: pointer;
     background-color: rgba($color: #000000, $alpha: 0.6);
+    z-index: 999;
 
     @include max-width(768px) {
         padding: 20px;
@@ -13,11 +14,6 @@
 
     @include max-width(360px) {
         padding: 0px;
-    }
-
-    &_auth {
-        display: flex;
-
     }
 
     &__title {
