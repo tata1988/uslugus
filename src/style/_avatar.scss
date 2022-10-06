@@ -5,10 +5,10 @@
         align-items: center;
         gap: 16px 11px;
         cursor: pointer;
+        margin-bottom: 20px;
 
         @include max-width(520px) {
             flex-direction: column;
-            
             align-items: flex-start;
         }
 

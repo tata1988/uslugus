@@ -38,14 +38,17 @@
         border-radius: 12px;
         padding: 24px 20px 48px;
 
+        @include max-width(360px) {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
         &_pd {
             padding-bottom: 29px;
 
             @include max-width(520px) {
                 padding-bottom: 32px;
             }
-
-
         }
     }
 
