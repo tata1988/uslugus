@@ -34,8 +34,6 @@ export const createCard = (item) => {
 
   servicePresent.append(serviceTitle, serviceName);
 
-
-
   const servicePrice = document.createElement('p');
   servicePrice.classList.add('service__price');
   servicePrice.textContent = `${directions[direction]} ${price} ₽`;

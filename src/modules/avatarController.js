@@ -12,7 +12,7 @@ export const avatarController = ({ inputFile, uploadResult }) => {
 
     crp.hideAvatar = () => {
         avatar.style.display = 'none';
-    }
+    };
 
     crp.hideAvatar();
 
@@ -21,7 +21,7 @@ export const avatarController = ({ inputFile, uploadResult }) => {
             const reader = new FileReader();
             reader.addEventListener('loadend', (e) => {
                 avatar.style.display = 'block';
-                crp.bind({ url: e.target.result });
+                crp.bind({ url: e.target.result })
             });
 
             reader.readAsDataURL(input.files[0])
@@ -30,8 +30,6 @@ export const avatarController = ({ inputFile, uploadResult }) => {
     };
 
     upload.addEventListener('change', readFile);
-
-    crp.hideAvatar = hideAvatar;
     return crp;
 };
 

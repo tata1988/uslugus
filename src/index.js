@@ -2,17 +2,23 @@ import './index.html';
 import './index.scss';
 
 import { choicesController } from './modules/choicesController';
+import { API_URL } from './modules/const';
+import { getData } from './modules/getData';
 import { getCategory } from './modules/getCategory';
 import { modalController } from "./modules/modalController";
 import { ratingController } from './modules/ratingController';
 import { renderList } from './modules/renderList';
+import { renderModal } from './modules/renderModal';
 import { searchControl } from './modules/searchControl';
 import { selectController } from './modules/selectController';
 import { showPassword } from './modules/showPassword';
-import { signUpController } from './modules/sign';
+import { signInController, signUpController } from './modules/sign';
 
-const init = () => {
-    modalController({
+const init = async () => {
+    await getCategory();
+    renderList();
+
+    const eventModalSignIn = modalController({
         modal: '.modal_auth',
         btnOpen: '.header__auth-btn_sign-in',
         btnClose: '.modal__close',
@@ -31,9 +37,9 @@ const init = () => {
         parrentBtns: '.services__list',
         btnClose: '.modal__close',
 
-        handlerOpenModal: async () => {
-            const data = await fetch('https://jsonplaceholder.typicode.com/todos/1')
-                .then(response => response.json());
+        handlerOpenModal: async ({ handler, modalElem }) => {
+            const data = await getData(`${API_URL}/api/service/${handler.dataset.id}`);
+            renderModal(modalElem, data);
             const comments = document.querySelectorAll('.review__text');
 
             comments.forEach((comment) => {
@@ -64,16 +70,12 @@ const init = () => {
     });
 
     showPassword();
-
     choicesController();
 
-
-    getCategory();
-    renderList();
     searchControl();
     ratingController();
     signUpController(eventModalSignUp.closeModal);
-
+    signInController(eventModalSignIn.closeModal);
 };
 
 init();

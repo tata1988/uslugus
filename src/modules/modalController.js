@@ -7,7 +7,9 @@ export const modalController = ({
     handlerOpenModal = () => { },
     handlerCloseModal = () => { },
 }) => {
-    const handlerElems = parrentBtns ? document.querySelector(parrentBtns) : document.querySelectorAll(btnOpen);
+    const handlerElems = parrentBtns 
+    ? document.querySelector(parrentBtns) 
+    : document.querySelectorAll(btnOpen);
     const modalElem = document.querySelector(modal);
 
     modalElem.style.cssText = `
@@ -41,25 +43,25 @@ export const modalController = ({
 
                 setTimeout(() => {
                     modalElem.style.visibility = 'hidden';
-                    data.handlerCloseModal();
+                    data.handlerCloseModal({modalElem});
                 }, time);
-
-
+           
                 window.removeEventListener('keydown', data.closeModal);
             }
         },
 
-        openModal: async () => {
-            await data.handlerOpenModal()
+        openModal: async (handler) => {
+            await data.handlerOpenModal({handler, modalElem});
             modalElem.style.visibility = 'visible';
             modalElem.style.opacity = '1';
-            window.addEventListener('keydown', data.closeModal)
-        }
+            window.addEventListener('keydown', data.closeModal);
+        },
     };
 
     if (parrentBtns) {
         handlerElems.addEventListener('click', ({ target }) => {
-            if (target.closest(btnOpen)) {
+            const handler = target.closest(btnOpen);
+            if (handler) {
                 data.openModal()
             }
         })
