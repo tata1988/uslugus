@@ -6,7 +6,6 @@ import { API_URL } from './modules/const';
 import { getData } from './modules/getData';
 import { getCategory } from './modules/getCategory';
 import { modalController } from "./modules/modalController";
-import { ratingController } from './modules/ratingController';
 import { renderList } from './modules/renderList';
 import { renderModal } from './modules/renderModal';
 import { searchControl } from './modules/searchControl';
@@ -71,9 +70,7 @@ const init = async () => {
 
     showPassword();
     choicesController();
-
     searchControl();
-    ratingController();
     signUpController(eventModalSignUp.closeModal);
     signInController(eventModalSignIn.closeModal);
 };

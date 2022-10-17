@@ -32,7 +32,15 @@
         gap: 8px;
         min-height: 95px;
 
+        &:nth-child(n+4) {
+            display: none;
+        }
+    }
 
+    &_show-all {
+        .review__item {
+            display: grid;
+        }
     }
 
     &__name {
