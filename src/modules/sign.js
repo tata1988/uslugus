@@ -7,12 +7,13 @@ import { postData } from './postData';
 export const signInController = (callback) => {
 
     const form = document.querySelector('.form-auth');
+    form.action = `${API_URL}/api/service/signin`;
     form.addEventListener('submit', async e => {
         e.preventDefault();
         const formData = new FormData(form);
         const data = Object.fromEntries(formData);
 
-        const dataResponse = await postData(`${API_URL}/api/service/signin`, data);
+        const dataResponse = await postData(form.action, data, form.dataset.method);
 
         if (dataResponse.errors) {
             console.log(dataResponse.errors) // todo обработка ошибки
@@ -50,6 +51,10 @@ export const signUpController = (callback) => {
             size: 'viewport',
         });
 
+        if (!data.avatar.includes('base64')) {
+            delete data.avatar;
+        }
+
         // ф-я для отправки данных пользователя после рег-ции на сервер
         const dataResponse = await postData(`${API_URL}/api/service/signup`, data);
         if (dataResponse.errors) {
@@ -57,10 +62,14 @@ export const signUpController = (callback) => {
             return;
         }
 
-        const servicesList = document.querySelector('.services__list');
-        servicesList.append(createCard(dataResponse));
+        if (form.dataset.method !== 'PATCH') {
+            const servicesList = document.querySelector('.services__list');
+            servicesList.append(createCard(dataResponse));
 
-        auth(dataResponse);
+            auth(dataResponse);
+        }
+
+
         form.reset();
         crp.hideAvatar();
         callback(e);

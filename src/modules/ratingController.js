@@ -1,6 +1,4 @@
-export const ratingController = ({ stars, ratingInput }) => {
-    const stars = document.querySelector('.rating');
-    const ratingInput = document.querySelector('.rating__input');
+export const ratingController = (stars, ratingInput) => {
 
     stars.addEventListener('click', ({ target, currentTarget }) => {
         const star = target.closest('.rating__star');
@@ -9,4 +7,5 @@ export const ratingController = ({ stars, ratingInput }) => {
             ratingInput.value = star.dataset.rating;
         }
     })
+
 }
